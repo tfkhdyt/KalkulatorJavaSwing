@@ -1,5 +1,6 @@
-
+package com.tfkhdyt.tugasjavalanjutan;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -39,9 +40,16 @@ public class OperasiBilangan extends javax.swing.JFrame {
         kurang = new javax.swing.JButton();
         kali = new javax.swing.JButton();
         bagi = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Operasi Bilangan");
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setName("Operasi Bilangan"); // NOI18N
 
@@ -89,6 +97,9 @@ public class OperasiBilangan extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Taufik Hidayat - 301200032");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -97,6 +108,7 @@ public class OperasiBilangan extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(bil1)
+                    .addComponent(bil2, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -109,7 +121,9 @@ public class OperasiBilangan extends javax.swing.JFrame {
                         .addComponent(kali, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bagi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(bil2, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel3)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -129,21 +143,24 @@ public class OperasiBilangan extends javax.swing.JFrame {
                     .addComponent(kurang)
                     .addComponent(kali)
                     .addComponent(bagi))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bil1ActionPerformed
@@ -161,11 +178,9 @@ public class OperasiBilangan extends javax.swing.JFrame {
             int b = Integer.parseInt(bil2.getText());
             int c = a + b;
             String hasil = a + " + " + b + " = " + c;
-            JOptionPane.showConfirmDialog(null, hasil, "Hasil", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, hasil, "Hasil", JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception j){
-            JOptionPane.showConfirmDialog(null, "Masukkan Angka!", "Error", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);                
+            JOptionPane.showMessageDialog(null, "Masukkan Angka!", "Error", JOptionPane.INFORMATION_MESSAGE);                
         }
     }//GEN-LAST:event_tambahActionPerformed
 
@@ -176,11 +191,9 @@ public class OperasiBilangan extends javax.swing.JFrame {
             int b = Integer.parseInt(bil2.getText());
             int c = a - b;
             String hasil = a + " - " + b + " = " + c;
-            JOptionPane.showConfirmDialog(null, hasil, "Hasil", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, hasil, "Hasil", JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception j){
-            JOptionPane.showConfirmDialog(null, "Masukkan Angka!", "Error", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);                
+            JOptionPane.showMessageDialog(null, "Masukkan Angka!", "Error", JOptionPane.INFORMATION_MESSAGE);                
         }
     }//GEN-LAST:event_kurangActionPerformed
 
@@ -191,11 +204,9 @@ public class OperasiBilangan extends javax.swing.JFrame {
             int b = Integer.parseInt(bil2.getText());
             int c = a * b;
             String hasil = a + " * " + b + " = " + c;
-            JOptionPane.showConfirmDialog(null, hasil, "Hasil", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, hasil, "Hasil", JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception j){
-            JOptionPane.showConfirmDialog(null, "Masukkan Angka!", "Error", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);                
+            JOptionPane.showMessageDialog(null, "Masukkan Angka!", "Error", JOptionPane.INFORMATION_MESSAGE);                
         }
     }//GEN-LAST:event_kaliActionPerformed
 
@@ -206,13 +217,17 @@ public class OperasiBilangan extends javax.swing.JFrame {
             double b = Double.parseDouble(bil2.getText());
             double c = a / b;
             String hasil = (int)a + " / " + (int)b + " = " + String.format("%.2f",c);
-            JOptionPane.showConfirmDialog(null, hasil, "Hasil", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, hasil, "Hasil", JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception j){
-            JOptionPane.showConfirmDialog(null, "Masukkan Angka!", "Error", 
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);                
+            JOptionPane.showMessageDialog(null, "Masukkan Angka!", "Error", JOptionPane.INFORMATION_MESSAGE);                
         }
     }//GEN-LAST:event_bagiActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon("src/gambar.jpg");
+        setIconImage(icon.getImage());
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -255,6 +270,7 @@ public class OperasiBilangan extends javax.swing.JFrame {
     private javax.swing.JTextField bil2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton kali;
     private javax.swing.JButton kurang;
